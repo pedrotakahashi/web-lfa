@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Trabalho de LFA - Expressão Regular</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/evil-icons@1.9.0/assets/evil-icons.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/index-style.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg  navbar-dark bg-dark no-select">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Início</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="regex.html">Expressões Regulares</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="grammar.html">Gramática Regular</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="automatos.html">Automatos Finitos</a>
+                </li>
+            </ul>
+            <span class="navbar-text">
+                <a href="#"  data-toggle="modal" data-target="#infoRegex"s>
+                    <div data-icon="ei-exclamation" data-size="m"></div>
+                </a>
+            </span>
+        </div>
+    </nav>
+    <br>
+
+    <div class="container" id="regex">
+        <div class="info">
+            <h2 class="no-select">Leitor de Expressões Regulares</h2>
+            <p>
+                Insira a expressão no campo de Expressão e a entrada no campo de Entrada, a análise ocorre automaticamente, ao clicar em Verificar, a análise também é realizada.
+                <br>
+                Por exemplo:
+                Use a expressão regular no campo Expressão: ^(abc)$
+                <br>
+                Depois insira abc no campo Entrada, caso esteja correto a entrada sera marcada como verde, se estiver
+                errado, ela será marcada com vermelho.
+                <br>
+                Cuidado para não copiar os espaços.
+            </p>
+        </div>
+        <div>
+            <div class="regex-return">
+                <h6 id="result-regex-title">Resultado - </h6>
+                <h6 id="result-regex">Aguardando entrada</h6>
+            </div>
+            <div class="regex-input">
+                <form id="regex-form">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text no-select" id="inputGroup-sizing-default">Expressão</span>
+                        </div>
+                        <input type="text" class="form-control" id="RegexGrammar" aria-label="Default"
+                            aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12   ">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text no-select" id="inputGroup-sizing-default">Entrada</span>
+                                </div>
+                                <input type="text" class="form-control" id="RegexString" aria-label="Default"
+                                    aria-describedby="inputGroup-sizing-default">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <button class="btn btn-dark regex-btn" type="button" onclick="Regexinator()">Verificar</button>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-secondary"
+            onClick="adicionarInput()"
+            data-toggle="modal" data-target="#multipleInputs">Múltiplas
+                Entradas</button>
+        </div>
+        <br>
+        <div class="accordion" id="exemplos">
+            <div class="card">
+
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#exemplos">
+                    <div class="card-body">
+                        <ul>
+                            <li>
+                                <h6><b>Letras do alfabeto:</b><br><small>Expressão: ^[a-zA-Z]{1,}$</small><br><small>Entrada: AbCdE</small></h6>
+                                <hr>
+                            </li>
+                            <li>
+                                <h6><b>Números Decimais:</b><br><small>Expressão: ^\d*[0-9](\.\d*[0-9])?$</small><br><small>Entrada: 5.55</small></h6>
+                                <hr>
+                            </li>
+                            <li>
+                                <h6><b>Arquivos Documentos:</b><br><small>Expressão: ^[a-zA-Z0-9-_\.]+\.(pdf|txt|doc|csv|dat|data)$</small><br><small>Entrada: arquivo.dat</small></h6>
+                                <hr>
+                            </li>
+                            <li>
+                                <h6><b>Endereco IP:</b><br><small>Expressão: ^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$</small><br><small>Entrada: 192.168.0.1</small></h6>
+                                <hr>
+                            </li>
+                            <li>
+                                <h6><b>Telefone (Número brasileiro):</b><br><small>Expressão: ^\(?\d{2}\)?[\s-]?\d{4}-?\d{4}$</small><br><small>Entrada: (11) 5555-1977</small></h6>
+                                <hr>
+                            </li>
+                            <li>
+                                <h6><b>Código de cor no HTML:</b><br><small>Expressão: ^#?([a-f]|[A-F]|[0-9]){3}(([a-f]|[A-F]|[0-9]){3})?$</small><br><small>Entrada: #00ccff</small></h6>
+                                <hr>
+                            </li>
+                            <li>
+                                <h6><b>Tipos de declaração de variáveis em C:</b><br><small>Expressão: ^(int|double|float|char|long int|short int|unasigned char|unsigned long int) [a-zA-Z0-9]{1,};$</small><br><small>Entrada: double auxiliar1;</small></h6>
+                                <hr>
+                            </li>
+                            <li>
+                                <h6><b>Horário(HH:MM):</b><br><small>Expressão: ^([0-1][0-9]|[2][0-3])(:([0-5][0-9])){1,2}$</small><br><small>Entrada: 12:00</small></h6>
+                                <hr>
+                            </li>
+                            <li>
+                                <h6><b>URL:</b><br><small>Expressão: ^(http[s]?://|ftp://)?(www\.)?[a-zA-Z0-9-\.]+\.(com|org|net|mil|edu|ca|co.uk|com.au|gov|br)$</small><br><small>Entrada: www.youtube.com.br</small></h6>
+                                <hr>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="multipleInputs" tabindex="-1" role="dialog" aria-labelledby="multipleInputs"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Teste para múltiplos inputs</h5>
+                        <button type="button"  class="close" data-dismiss="modal" aria-label="Close" >
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text no-select" id="inputGroup-sizing-default">Expressão</span>
+                            </div>
+                            <input type="text" class="form-control" id="RegexGrammarModal" aria-label="Default"
+                                aria-describedby="inputGroup-sizing-default">
+                        </div>
+                        <div class="modal-div-strings" id="modal-new-input">
+
+                        </div>
+                        <p id="multiple-regex-grammar"></p>
+                        <div class="modal-div-paragraph">
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary regex-modal-btn-close"
+                            data-dismiss="modal">Sair</button>
+                        <button type="button" class="btn btn-primary regex-modal-btn"
+                            onclick="adicionarInput()">Adicionar
+                            inputs</button>
+                        <button type="button" class="btn btn-primary regex-modal-btn"
+                            onclick="multipleRegexinator()">Verificar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade no-select" id="infoRegex" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><b>SOBRE O REGEX</b></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p><h6><b>Leitor de expressão regular versão </b></h6></p>
+                </div>
+                <div class="modal-footer">
+                    <small style="margin-top: auto; text-align: center; text-align: justify;"><p>2019</p></small>
+                    <button type="button" class="btn btn-secondary btn-lg" style="margin-left: auto;" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- Include dos scripts -->
+<script src="./js/jquery/jquery-3.4.1.min.js"></script>
+<script src="./js/jquery/popper.min.js"></script>
+<script src="./js/bootstrap/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/evil-icons@1.9.0/assets/evil-icons.min.js"></script>
+<script src="./js/regex.js"></script>
+
+</html>

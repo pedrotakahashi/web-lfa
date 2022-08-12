@@ -1,0 +1,48 @@
+.info{
+    align-content: center !important;
+    text-align: left;
+}
+
+.regex-input{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.regex-btn{
+    text-decoration: none !important;
+    width: 8%;
+    height: 5%;
+}
+
+.regex-modal-btn{
+    text-decoration: none !important; 
+}
+
+.regex-modal-btn-close{
+   text-decoration: none !important;
+}
+
+@media (min-width: 400px){
+    a{
+        color: white !important;
+        text-decoration: none !important;
+    }
+
+    .regex-input{
+    width: 16%;
+    }
+
+    .regex-btn{
+        text-decoration: none !important;; 
+    }
+
+    .regex-modal-btn{
+        text-decoration: none !important;
+    }
+
+    .regex-modal-btn-close{
+        text-decoration: none !important;
+    }
+
+}

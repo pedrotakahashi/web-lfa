@@ -1,46 +1,110 @@
-# Getting Started with Create React App
+Parte 1 --:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Objetivo
+Desenvolver o entendimento de Linguagens Regulares e seu potencial
+de representação através da implementação de um Simulador.
 
-## Available Scripts
 
-In the project directory, you can run:
+2. Descrição
+O trabalho deve ser preferencialmente realizado em duplas. Cada
+dupla deve projetar e desenvolver a aplicação abaixo, empregando a
+linguagem de livre escolha.
+Simulador de Linguagens Regulares – requisitos:
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+a) Representação 1: especificar e simular expressões regulares (ER) –
+maiores detalhes no anexo 1;
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+b) Representação 2: especificar e simular autômatos finitos através de
+diagramas de transições:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+1. tratar autômatos finitos determinístico (AFD) e autômatos finitos
+não-determinísticos (AFND);
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. permitir a edição/remoção de estados e transições;
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+3. permitir o reconhecimento de uma única entrada;
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. permitir o reconhecimento de múltiplas entradas;
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+5. permitir o reconhecimento de palavras passo a passo;
+b) Representação 3: especificar e simular gramáticas regulares (GR);
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Produto
+O programa a ser implementado neste projeto deverá atender
+rigorosamente os requisitos apresentados acima. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+4. Critérios
+Os critérios de correção dos trabalhos são:
+
+
+1. (80%) O programa funciona corretamente para todos os casos de teste;
+
+
+2. (20%) Documentação: relatório simples que explica as técnicas utilizadas
+para implementar a máquina escolhida. Discutir a qualidade da solução
+implementada e a estruturação do código.
+
+
+
+Parte 2 --:
+
+1. Objetivo
+Desenvolver um Simulador que permita a conversão e simulação de
+modelos formais, com o objetivo de auxiliar o aprendizado de Linguagens
+Formais e Autômatos.
+
+
+2. Descrição
+Simulador – requisitos:
+a) Permitir a conversão entre os modelos:
+
+
+1. AFD -> AFND;
+
+
+2. AF -> GR;
+
+
+3. GR -> AF;
+
+
+4. AF -> ER;
+
+
+5. ER -> AF.
+
+
+b) Permitir salvar e abrir um AF, utilizando o mesmo formato do XML do
+jFlap.
+
+
+3. Produto
+O programa a ser implementado neste projeto deverá atender
+rigorosamente os requisitos apresentados acima.
+O prazo final para apresentação será 16/11 (improrrogável). A
+cada dia de atraso, 1 ponto a menos. Além do programa, um relatório
+com a descrição do trabalho deverá ser entregue (ver seção Critérios
+abaixo).
+
+
+4. Critérios 
+
+
+Os critérios de correção dos trabalhos são:
+1. (80%) O programa funciona corretamente para todos os casos de teste;
+
+
+2. (20%) Documentação: relatório simples que explica as técnicas utilizadas
+para implementar a máquina escolhida. Discutir a qualidade da solução
+implementada e a estruturação do código.
+
+

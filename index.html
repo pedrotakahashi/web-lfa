@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Trabalho de LFA - Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./css/bootstrap/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/evil-icons@1.9.0/assets/evil-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./css/index-style.css"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark no-select">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarText"
+        aria-controls="navbarText"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="regex.html"> Expressões Regulares</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="grammar.html"> Gramática Regular</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="automatos.html">Automatos Finitos</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <a href="#" data-toggle="modal" data-target="#sobreModalTrabalho">
+            <div data-icon="ei-exclamation" data-size="m"></div>
+          </a>
+        </span>
+      </div>
+    </nav>
+
+    <div id="main" class="container no-select">
+      <div class="text-center">
+        <div data-icon="ei-gear" data-size="l"></div>
+        <h1 class="text-center">
+          <b>Web Automato</b>
+        </h1>
+      </div>
+
+      <div class="">
+        <div class="main-menu text-center">
+          <ul>
+            <li>
+              <a
+                href="regex.html"
+                class="btn btn-secondary btn-lg"
+                role="button"
+                aria-pressed="true"
+              >
+                Expressões Regulares</a
+              >
+            </li>
+            <li>
+              <a
+                href="grammar.html"
+                class="btn btn-secondary btn-lg"
+                role="button"
+                aria-pressed="true"
+                >Gramática Regular</a
+              >
+            </li>
+            <li>
+              <a
+                href="automatos.html"
+                class="btn btn-secondary btn-lg"
+                role="button"
+                aria-pressed="true"
+                >Automatos Finitos
+              </a>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="btn btn-secondary btn-lg"
+                data-toggle="modal"
+                data-target="#sobreModal"
+              >
+                Sobre o Trabalho
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="./js/jquery/popper.min.js"></script>
+    <script src="./js/bootstrap/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/evil-icons@1.9.0/assets/evil-icons.min.js"></script>
+  </body>
+</html>
